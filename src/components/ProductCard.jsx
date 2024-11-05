@@ -1,25 +1,31 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+import Ratings from "./Ratings";
+import { FaArrowTrendUp } from "react-icons/fa6";
 
-const ProductCard = ({product}) => {
+
+const ProductCard = ({ product }) => {
     return (
         <div className='col-span-1  cursor-pointer group border-2  hover:shadow-xl rounded-xl p-2'>
             <div className='flex flex-col gap-2 w-full'>
+           
                 <div
                     className='
             aspect-square 
-            w-full 
             relative 
             overflow-hidden 
             rounded-xl
           '
+        
                 >
+                     <div className='font-semibold text-xs absolute bg-blue-900 p-2 rounded-xl text-white'>{product?.category}</div>
                     <img
                         className='
-             
-               h-64 mt-3 mx-auto object-contain
-              group-hover:scale-110 
-              transition
+                  h-full 
+                  w-full 
+                  group-hover:scale-110 
+                  transition
             '
                         src={product?.image}
                         alt='Room'
@@ -32,34 +38,28 @@ const ProductCard = ({product}) => {
           '
                     ></div>
                 </div>
-                {/* <div className='font-semibold text-lg'>{name}</div>
-                <div className='flex justify-between items-center'>
-                    <div className='font-semibold text-xs text-violet-900'>{category}</div>
-                    <div className='font-semibold text-xs text-violet-900'>{brand_name}</div>
-                </div> */}
+                <div className='text-lg font-semibold text-gray-900 mb-2 line-clamp-1'>{product.title}</div>
+                <p className="text-gray-700 text-sm line-clamp-2 mb-3">
+                    {product.description}
+                </p>
+              
 
-                {/* <div className='flex items-center text-xs text-gray-700 justify-between'>
+                <div className='flex items-center text-xs text-gray-700 justify-between'>
+                <p className="text-lg font-bold text-blue-600 mb-2">${product.price}</p>
                     <div className='flex items-center text-xs text-gray-700 gap-2'>
-                        <Ratings rating={rating}></Ratings>
-                        <span>{
-                            rating !== 0 ? <span>({rating})</span> : <></>
-                        }</span>
+                        <Ratings rating={product?.rating?.rate}></Ratings>
+                        
+                             <span>({product?.rating?.count} reviews)</span> 
+                        
                     </div>
-                    {
-                        product_number > 0 ? <span className='text-xs text-green-900 font-semibold'>In stock</span> : <span className='text-xs text-red-900 font-semibold'>Out of stock</span>
-                    }
+                   
 
-                </div> */}
-                {/* <div className='flex justify-between items-center'>
-                    <div className='font-semibold flex items-center text-orange-800'><TbCurrencyTaka size={20}></TbCurrencyTaka> {price}</div>
-                    {
-                        discount ? <span className='text-xs text-orange-700 font-semibold'>{discount}% off</span> : <></>
-                    }
-                </div>
-                <div className='flex justify-between items-center'>
-                    <Link to={`/product/${_id}`} className='btn btn-outline'>View Details <FaArrowTrendUp ></FaArrowTrendUp> </Link>
-                    <button onClick={() => handleAddCart(product._id)}><FaCartArrowDown size={20} ></FaCartArrowDown></button>
-                </div> */}
+                </div> 
+               
+                
+                    <Link to={`/product/${product?.id}`} className='btn btn-outline'>View Details <FaArrowTrendUp ></FaArrowTrendUp> </Link>
+                   
+              
             </div>
         </div>
     );
