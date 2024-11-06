@@ -71,7 +71,7 @@ const ProductList = ({ category, searchTerm }) => {
             </div>
             {
                 productsPerPage.length > 0 ? 
-                <div className="paginetion flex mb-20">
+                <div className="paginetion flex mt-7 mb-20">
                 <div className="join border-green-300 border mx-auto ">
                     <button
                         onClick={() => setPage((old) => old - 1)}
