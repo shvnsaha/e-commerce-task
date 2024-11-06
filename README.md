@@ -3,7 +3,7 @@
 # E-Commerce Product Browser
 A sleek, responsive e-commerce product browser built using React and Vite. This app lets users explore and filter a wide range of products with a smooth and interactive interface. It leverages Axios for data fetching, React Query for server-side data management, and Tailwind CSS for modern, responsive UI styling.
 
-Live Demo
+## [Live Demo](https://e-commerce-product-six.vercel.app/)
 # Key Features
 * Product Listing: Displays a grid of products fetched dynamically from an external API.
 * Search Functionality: Users can search for products by name, instantly filtering the product list.
